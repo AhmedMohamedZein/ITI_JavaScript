@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        #fullName = '' ;
+        #money = 1000 ;// buy
+        #sleepMood = 'Happy' ;//  sleep
+        #healthRate = 100 ;// Eat
+    constructor (fullName,money, sleepMood,healthRate) {
+        this.#fullName = fullName ;
+        this.#money = money ;
+        this.#sleepMood = sleepMood ;
+        this.#healthRate = healthRate ;  
+    }
+    sleep (hours) {
+        if (hours === 7 ) {
+            this.#sleepMood = "Happy" ;
+        }
+        else if ( hours > 7 ) {
+            this.#sleepMood = "Lazy" ;
+        }
+        else {
+            this.#sleepMood =  "Tired";
+        }
+    }
+    eat (meals) {
+        if ( meals === 3 ) {
+            this.#healthRate = 100 ;
+        }
+        else if ( meals === 2 ) {
+            this.#healthRate = 75 ;
+        }
+        else if ( meals === 1 ) {
+            this.#healthRate = 50 ;
+        }
+    }
+    buy (items) {
+        if (items === 1) {
+            this.#money = this.#money - 10 ; 
+        }
+    }
+    get fullName () {
+        return this.#fullName ;
+    }
+    set fullName (fullName) {
+        this.#fullName = fullName ;
+    }
+    get sleepMood () {
+        return this.#sleepMood ;
+    }
+    get healthRate () {
+        return this.#healthRate ;
+    }
+    get money () {
+        return this.#money ;
+    }
+}
+
+let auto_increment_employee_id = 1 ;
+
+class Employee extends Person {
+    #id         // Number
+    #email      // String
+    #workMode   // String
+    #salary     // Number
+    #isManager  // String
+    constructor (fullName,workMode,salary,isManager,email ,money, sleepMood, healthRate) {
+        super (fullName,money, sleepMood, healthRate) ;
+        this.#id = auto_increment_employee_id;
+        auto_increment_employee_id += auto_increment_employee_id ;
+        this.#email = email;
+        this.#workMode = workMode;
+        this.#salary = salary ;
+        this.#isManager = isManager ;
+    }
+    work (hours) {
+        if (hours < 8) {
+            this.#workMode = 'Happy' ;
+        }
+        else if ( hours >= 8 ) {
+            this.#workMode = 'Tired' ;
+        }
+        else {
+            this.#workMode = 'Lazy';
+        }
+    }
+    get id () {
+        return this.#id ;
+    }
+    set isManager (isManager) {
+        this.#isManager = isManager ; 
+    }
+    get isManager () {
+        return this.#isManager ;
+    }
+    get workMode () {
+        return this.#workMode;
+    }
+    set email (email) {
+        this.#email = email ;
+    }
+    get email () {
+        return this.#email ;
+    }
+    set salary (salary){
+        this.#salary = salary ;
+    }
+    get salary () {
+        return this.#salary ;
+    }
+}
+
+
+class Office {
+
+  #employees  
+
+    constructor () {
+        this.#employees = [] ;
+    }
+
+    get employees () {
+        let temp ;
+        Object.assign(temp , this.#employees);
+        return temp ; // array of employee type 
+    }
+    getEmployee (id) {
+        emp = NULL ;
+        for (employeeIndex of this.#employees) {
+            if (employeeIndex.id === id) { // emp1 emp2 emp3 ... emp1 {id email ... work().. etc}
+                emp = employeeIndex ;
+            } 
+        }
+        return emp ;
+    }
+    hire(emp) {
+        if (emp instanceof Employee) {
+            this.#employees.push (emp);
+
+            return true ;
+        }
+        else {
+            return false ;
+        }
+    }
+    fire(id) {
+        for (let i = 0 ; i < this.#employees.length ; i++) {
+            if (this.#employees[i].id === id )  { // emp1 emp2 emp3 ... emp1 {id email ... work().. etc}
+                this.#employees = this.#employees.slice (i) ;
+                return true ;
+            } 
+        }
+        return false ;
+    }
+}
+
+
+
+let emp = new Employee ('Ahmed Mohamed Zein','happy',9000,'snior','ahmedzain503@gmail.com',1000,'Lazy',90) ;
+let chooes = -1 ;
+let office = new Office () ;
+    while ( chooes != 'q' ) {
+      chooes = prompt("Enter your chooes \n{ add }  \n{ show all employees } \n{ fire }\n{q} for exit");
+      switch (chooes) {
+          case 'add':
+                      let empName = prompt ("Name :");
+                      let empAge = prompt("Age:");
+                      let emp = new Employee ('ahmedzain503@gmail.com',`${empName}`);
+                      office.hire(emp);
+              break;
+          case 'fire': let id = prompt("Enter empolyee id :"); 
+                      office.fire( Number(id) );   
+              break;
+          case 'show all employees': alert ( JSON.stringify(office.employees[0].fullName) );
+              break;
+          case 'q': break ; 
+          default : 
+              alert ("Enter valid chooes or exit using q ");
+    } 
+
+
+}
+
+
+    </script>
+  </body>
+</html>
