@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /*
+        Setup the following using constructor functions, using classes, using object linking to other objects (OLOO)
+        Using Factory functions
+      */
+      // 1- Constructor function method
+      function Person (fullName,money, sleepMood,healthRate) {
+
+          this.fullName = fullName ;
+          this.money = money ;
+          this.sleepMood = sleepMood ;
+          this.healthRate = healthRate ;
+      }
+
+      Object.assign (Person.prototype , {
+          sleep (hours) {
+              if (hours === 7 ) {
+                  this.sleepMood = "Happy" ;
+              }
+              else if ( hours > 7 ) {
+                  this.sleepMood = "Lazy" ;
+              }
+              else {
+                  this.sleepMood =  "Tired";
+              }
+          },
+          Eat (meals) {
+              if ( meals === 3 ) {
+                  this.healthRate = 100 ;
+              }
+              else if ( meals === 2 ) {
+                  this.healthRate = 75 ;
+              }
+              else if ( meals === 1 ) {
+                  this.healthRate = 50 ;
+              }
+          },
+          Buy (items) {
+              if (items === 1) {
+                  this.money = this.money - 10 ; 
+              }
+          }
+      });
+
+      let person = new Person ("Ahmed zein",90 , "Happy",100);
+
+      person.sleep(11) ;
+      person.Buy(1);
+      person.Eat(2);
+      alert ( person.sleepMood ) ; 
+      alert ( person.healthRate ) ; 
+      alert ( person.money ) ;  
+
+      // the idea dividing the constructor and prototype is if you want to create an object without invoking the constructor 
+
+
+      // 2- Using Classes from ECMA6
+
+      class Person {
+
+          constructor (fullName,money, sleepMood,healthRate) {
+              this.fullName = fullName ;
+              this.money = money ;
+              this.sleepMood = sleepMood ;
+              this.healthRate = healthRate ;  
+          }
+          sleep (hours) {
+              if (hours === 7 ) {
+                  this.sleepMood = "Happy" ;
+              }
+              else if ( hours > 7 ) {
+                  this.sleepMood = "Lazy" ;
+              }
+              else {
+                  this.sleepMood =  "Tired";
+              }
+          }
+          Eat (meals) {
+              if ( meals === 3 ) {
+                  this.healthRate = 100 ;
+              }
+              else if ( meals === 2 ) {
+                  this.healthRate = 75 ;
+              }
+              else if ( meals === 1 ) {
+                  this.healthRate = 50 ;
+              }
+          }
+          Buy (items) {
+              if (items === 1) {
+                  this.money = this.money - 10 ; 
+              }
+          }
+      }
+
+
+
+      // let person = new Person ("Ahmed zein",90 , "Happy",100);
+      person.sleep(11) ;
+      person.Buy(1);
+      person.Eat(2);
+      alert ( person.sleepMood ) ; 
+      alert ( person.healthRate ) ; 
+      alert ( person.money ) ;  
+
+
+
+      // 3- Object linking to other objects (OLOO)
+
+      const Person = {
+          init (fullName,money, sleepMood,healthRate) {
+              this.fullName = fullName ;
+              this.money = money ;
+              this.sleepMood = sleepMood ;
+              this.healthRate = healthRate ; 
+              return this ;
+          },
+          sleep (hours) {
+              if (hours === 7 ) {
+                  this.sleepMood = "Happy" ;
+              }
+              else if ( hours > 7 ) {
+                  this.sleepMood = "Lazy" ;
+              }
+              else {
+                  this.sleepMood =  "Tired";
+              }
+          },
+          Eat (meals) {
+              if ( meals === 3 ) {
+                  this.healthRate = 100 ;
+              }
+              else if ( meals === 2 ) {
+                  this.healthRate = 75 ;
+              }
+              else if ( meals === 1 ) {
+                  this.healthRate = 50 ;
+              }
+          },
+          Buy (items) {
+              if (items === 1) {
+                  this.money = this.money - 10 ; 
+              }
+          }   
+      }
+
+      // const person = Object.create (Person).init("ahmed zein", 50, "Tired" , 100);
+      person.Buy(1);
+      person.sleep(11) ;
+      person.Buy(1);
+      person.Eat(2);
+      alert ( person.sleepMood ) ; 
+      alert ( person.healthRate ) ; 
+      alert ( person.money ) ;  
+
+
+      // 4- Factory functions 
+
+      function Person(fullName,money,sleepMood,healthRate){
+      
+          return{
+              fullName,
+              money,
+              sleepMood,
+              healthRate,
+              
+              Sleep(hours){
+                  if(hours==7) {
+                      this.sleepMood="happy";
+                  }
+                  else if(hours<7) {
+                      this.sleepMood="tired";
+                  }
+                  else if(hours>7) {
+                      this.sleepMood="lazy";
+                  };
+              },
+              Eat(meals){if(meals==3) 
+                  {
+                      this.healthRate="100";            
+                  }
+                  else if(meals==2) {
+                      this.healthRate="75";
+                  }
+                  else if(meals==1) {
+                      this.healthRate="50"; 
+                  };
+              },
+              Buy(NofItems) {
+                  this.money-=NofItems*10;
+              }
+          }
+      }
+          
+      // const person = Person ('Ahmed zein',500,"tired",78);
+      person.Sleep(7);
+
+    </script>
+  </body>
+</html>
