@@ -9,13 +9,13 @@
             integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
             crossorigin="anonymous">
     </head>
-    <body>
+    <body style="background-color: #03001C">
         <main class="container" style="height: 100vh;">
             <div class="row offset-3 col-4 h-100 justify-content-center align-items-center">
-                <div class="card">
+                <div class="card"  style="background-color: #301E67">
                     <div class="card-body"> 
                         <div class="card mb-5" style="width: 23rem;">
-                            <ul class="list-group list-group-flush" id="tasks">
+                            <ul class="list-group list-group-flush fw-semibold" id="tasks">
                               <li class="list-group-item d-flex">
                                     <div class="flex-grow-1">Hello A second item</div> 
                                     <button onclick="done(this);" type="button" class="btn">&#9989;</button>
@@ -23,8 +23,8 @@
                                 </li>   
                             </ul>
                         </div>
-                        <div class="form-floating pe-4 d-inline-block">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="">
+                        <div class="form-floating pe-4 d-inline-block fw-semibold">
+                            <input  type="text" class="form-control" id="floatingInput" placeholder="">
                             <label for="floatingInput">Task</label>
                         </div>
                         <button onclick="add();" type="button" class="btn btn-primary w-25">Add</button>               
