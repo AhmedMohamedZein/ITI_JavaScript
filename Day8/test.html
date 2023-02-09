@@ -14,10 +14,11 @@
             <div class="row offset-3 col-4 h-100 justify-content-center align-items-center">
                 <div class="card"  style="background-color: #301E67">
                     <div class="card-body"> 
-                        <div class="card mb-5" style="width: 23rem;">
+                        <h3 class="fw-semibold text-light mb-2">Task list</h3>
+                        <div class="card mb-5" style="width: 23rem;">  
                             <ul class="list-group list-group-flush fw-semibold" id="tasks">
                               <li class="list-group-item d-flex">
-                                    <div class="flex-grow-1">Hello A second item</div> 
+                                    <div class="flex-grow-1">myTask@Example</div> 
                                     <button onclick="done(this);" type="button" class="btn">&#9989;</button>
                                     <button onclick="del(this);" type="button" class="btn">&#10060;</button>
                                 </li>   
@@ -45,7 +46,9 @@
             function done (elem) {
                 let ul_list = elem.parentNode.parentNode ;
                 ul_list.append(elem.parentNode);
-                elem.parentNode.style.backgroundColor = 'rgb(93, 148, 81)';
+
+                elem.parentNode.style.backgroundColor ='rgb(93, 148, 81)'';
+                console.log (elem.parentNode.style.backgroundColor);
             }
             function add () {
                 let taskText = document.createTextNode ( document.getElementById('floatingInput').value ) ;
