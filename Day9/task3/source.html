@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ALARM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+            crossorigin="anonymous"> 
+        <link rel="stylesheet" href="./source.css">   
+    <body>
+        <div class="container">
+            <div class="row d-flex align-items-sm-center justify-content-sm-center align-items-md-center justify-content-md-center" style="height: 100vh;">
+                <div class="col-md-7 col-sm-9"  id="clockBorder">
+                    <div id="days">
+                        <div class="container-fluid ">                        
+                            <ul class="d-flex flex-wrap flex-sm-wrap justify-content-md-between">
+                                <li class="" id ="Saturday">
+                                    Saturday
+                                </li>
+                                <li class="" id ="Sunday">
+                                    Sunday
+                                </li>
+                                <li class="" id ="Monday">
+                                    Monday
+                                </li>
+                                <li class="" id ="Tuesday">
+                                    Tuesday
+                                </li>
+                                <li class="" id ="Wednesday">
+                                    Wednesday
+                                </li>
+                                <li class="" id ="Thursday">
+                                    Thursday
+                                </li>
+                                <li class="" id ="Friday">
+                                    Friday
+                                </li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <ul class="col-12 d-flex justify-content-between h1">
+                        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <img width="40vh" height="45vh" src="./clock.png">
+                        </button>                          
+                        <li id="hours"><span>12</span></li>
+                        <li>:</li>
+                        <li id="minutes"><span>00</span></li>
+                        <li>:</li>
+                        <li id="seconds"><span>00</span></li>
+                        <li id="sun_night" class="justify-content-end">
+                            PM
+                        </li>
+                    </ul>                    
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog pt-5">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color: #F1DBBF; ">
+                  <h1 class="modal-title offset-4 fs-5" id="staticBackdropLabel">SET ALARM AFTER</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: #F1DBBF;">
+                  <div>
+                    <ul class="d-sm-flex d-block justify-content-sm-between">
+                        <li>
+                            <label for="alarmHour">Hour</label>
+                            <input id="alarmHour" class="col-3" type="text">
+                        </li>
+                        <li>
+                            <label for="alarmMinutes">Minutes</label>
+                            <input id="alarmMinutes" class="col-3" type="text">
+                        </li>
+                        <li>
+                            <label for="alarmSeconds">Seconds</label>
+                            <input id="alarmSeconds" class="col-3" type="text">
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center" style="background-color:  #F1DBBF;">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #AA5656;">Close</button>
+                  <button type="button" class="btn btn-secondary" style="background-color: #698269;">SET</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" 
+    crossorigin="anonymous"></script>
+    <script src="./source.js"></script>
+</html>
+
+
+

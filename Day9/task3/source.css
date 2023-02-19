@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Julee&display=swap');
+body{
+    background-color: #F1DBBF;
+}
+#clockBorder{
+    border: solid 5vh #AA5656;
+}
+
+.navbar navbar-expand-lg{
+    background-color: #AA5656;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    margin: 2%;
+    color: #698269 !important; 
+    font-family: 'Julee', cursive;
+}
+
+h1{
+    color: #698269 !important; 
+    font-family: 'Julee', cursive;
+}
+
+.active{
+    color: #3e563e !important; 
+    font-size: larger;
+    font-family: 'Julee', cursive;
+}
