@@ -34,7 +34,7 @@
     color: #F6EEC9;
 }
 
-.tasks-container {
+#tasks-container {
     margin-top: 2em;
     border: solid 5px #FFA36C;
     border-radius: 4vh;
@@ -43,14 +43,14 @@
     justify-content: start;
 }
 
-.tasks-container div {
+#tasks-container div {
     margin: 1em;
     width: 50vh;
     /* height: 5vh; */
     display: flex;
 }
 
-.tasks-container div span {
+#tasks-container div span {
     padding: 7px;
     width: 30vh;
     /* height: 5vh; */
@@ -83,7 +83,7 @@
     border-radius: 4vh;
 }
 
-.tasks-container button {
+#tasks-container button {
     width: 5vh;
     height: inherit;
     margin-left: 0.1em;
