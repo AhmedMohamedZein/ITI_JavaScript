@@ -1,7 +1,5 @@
 let add = document.getElementById("Add");
 let getContainer =  document.getElementById("tasks-container");
-let doneButton = document.getElementsByClassName("done");
-
 
 function addTask (event) {
     let getText = document.getElementById('myTextId').value;
@@ -21,5 +19,15 @@ function addTask (event) {
     getContainer.appendChild(myDiv);
 }
 
+function delegate (event) {
+
+    if (event.target.matches('.done')) {
+        event.target.parentElement.childNodes[0].style.background = 'green';
+    }
+    else if (event.target.matches('.remove')) {
+        event.target.parentElement.remove();
+    }
+} 
 
 add.addEventListener('click',addTask);
+getContainer.addEventListener('click',delegate);
