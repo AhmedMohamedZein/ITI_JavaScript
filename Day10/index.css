@@ -8,6 +8,7 @@ main {
 
 form {
     /* border-radius: 7px; */
+    width: 55vh;
     background-color: #F1DBBF;
     display: flex;
     flex-direction: column;
@@ -19,8 +20,12 @@ form {
     filter: drop-shadow(10px 10px 10px black);
 }
 
+.red{
+    color: red;
+}
 
 div{
+    flex-basis: 100%;
     margin-top: 0.5em !important;
 }
 
